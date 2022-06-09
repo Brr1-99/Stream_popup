@@ -1,2 +1,2 @@
 # Stream_popup
- Program that checks if your favourite streamer is live and then opens its content on the web browser.
+ Program that checks if your favorite streamer is live and then opens its Twitch page on your web browser.
