@@ -19,10 +19,13 @@ def main():
     page = requests.get(url, headers=headers)
 
     soup = BeautifulSoup(page.content, 'html.parser')
- 
-    script = soup.find('script', type="application/ld+json").get_text()
-    liveBroadcast = script.split(',')[-1]
-    online = liveBroadcast.split('}')[0].split(':')[-1].capitalize()
+    
+    try:
+        script = soup.find('script', type="application/ld+json").get_text()
+        liveBroadcast = script.split(',')[-1]
+        online = liveBroadcast.split('}')[0].split(':')[-1].capitalize()
+    except:
+        online = False
 
     if online == 'True':
         subprocess.Popen("Your_web_Browser_Url for example C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")
